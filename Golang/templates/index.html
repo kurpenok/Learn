@@ -2,30 +2,18 @@
 
 {{ template "header" }}
 
-			<main class="px-3">
-				<h1>Home page</h1>
-				<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-				<p class="lead">
-					<a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-				</p>
-				<p>Name: {{ .Name }}</p>
-				<p>Age: {{ .Age }}</p>
-
-				{{ if eq .Name "Bob" }}
-				<p>Hello, Bob!</p>
-
-				{{ else }}
-				<p>What is your name?</p>
-
-				{{ end }}
-
-				<ul>
-					{{ range .Hobbies }}
-					<li>{{ . }}</li>
-
-					{{ end }}
-				</ul>
-			</main>
+<main class="px-3">
+	<h1>Home page</h1>
+	<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+	
+	{{ range . }}
+	<div class="alert alert-danger">
+		<h2>{{ .Title }}</h2>
+		<p>{{ .Anons }}</p>
+		<a href="/post/{{ .Id }}" class="btn btn-danger">More</a>
+	</div>
+	{{ end }}
+</main>
 
 {{ template "footer" }}
 
