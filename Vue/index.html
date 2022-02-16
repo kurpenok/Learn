@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
     <body>
         <meta charset="utf-8">
         <title>Vue JS</title>
+
+        <link rel="stylesheet" href="css/main.css">
     </body>
     <head>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
+        
         <div id="app">
+            <p @click="text='A click occurred'">Click to change</p>
+            <p @mouseover="text='A mouse over occurred'">Mouse over to change</p>
+            <p @mouseover="change">Implemented my method</p>
             <p>{{ text }}</p>
+
+            <p :class="style">Color: {{ style }}</p>
+            <input type="text" @input="style = $event.target.value">
         </div>
         
         <script src="js/main.js"></script>
