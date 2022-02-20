@@ -1,4 +1,4 @@
-Vue.filter ("capitalize", function (value) {
+Vue.filter("capitalize", function (value) {
     if (!value) {
         return ""
     }
@@ -8,6 +8,17 @@ Vue.filter ("capitalize", function (value) {
     })
 });
 
+Vue.component("app-car", {
+    data: function() {
+        return {
+            cars: [
+                {model: "Lada"},
+                {model: "UAZ"}
+            ]
+        }
+    },
+    template: '<div><div class="car" v-for="car in cars"><p>{{ car.model }}</p></div></div>'
+});
 
 new Vue ({
     el: "#app",
@@ -17,10 +28,6 @@ new Vue ({
         style: "",
         value: 1,
         show: true,
-        cars: [
-            {model: "Lada", speed: 200},
-            {model: "UAZ", speed: 100}
-        ],
         message: "Message"
     },
 
