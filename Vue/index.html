@@ -18,11 +18,21 @@
             <input type="text" @input="style = $event.target.value">
         </div>
 
-        <div>
+        <div id="app">
             <input type="text" @input="increment($event.target.value)">
             <p>{{ value }}</p>
             <p>{{ new_value }}</p>
         </div>
+
+        <div id="app">
+            <button @click="show=!show">Hide/Show</button>
+            <p v-if="show">Sometime invisible text</p>
+            <p v-else>Sometime invisible text 2</p>
+        </div>
+
+        <ul>
+            <li v_for="(car, i) in cars">{{ i + 1 }} - Model: {{ car.model }}, speed: {{ car.speed }}</li>
+        </ul>
         
         <script src="js/main.js"></script>
     </head>
