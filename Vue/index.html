@@ -33,6 +33,8 @@
         <ul>
             <li v_for="(car, i) in cars">{{ i + 1 }} - Model: {{ car.model }}, speed: {{ car.speed }}</li>
         </ul>
+
+        <p>{{ message | lower | capitalize }}</p>
         
         <script src="js/main.js"></script>
     </head>
