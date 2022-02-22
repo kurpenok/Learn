@@ -1,3 +1,20 @@
+class User {
+    String name = "Default";
+    int age = 0;
+    List<String> hobbies = [];
+
+    // User(name, [age, hobbies]) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.hobbies = hobbies;
+    // }
+
+    void info() {
+        print("[+] Info: $name is $age years old. His hobbies: $hobbies");
+    }
+}
+
+
 void main(List<String> arguments) {
     print("[+] Dart project was created!\n");
 
@@ -86,7 +103,16 @@ void main(List<String> arguments) {
         i++;
     } while (i < 10);
 
-    print("\n[+] Function sum: ${sum(2, 3)}");
+    print("\n[+] Function sum: ${sum(2, 3)}\n");
+
+    print("[+] Create class");
+    
+    var user = User();
+    user.name = "Kuat";
+    user.age = 18;
+    user.hobbies.add("Programming");
+    
+    user.info();
 }
 
 int sum(int a, int b) {
