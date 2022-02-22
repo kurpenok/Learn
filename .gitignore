@@ -131,3 +131,7 @@ dmypy.json
 # JetBrains files
 .idea/
 
+# Dart files
+.dart_tool/
+.packages
+
