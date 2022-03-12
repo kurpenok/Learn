@@ -8,15 +8,19 @@
 
 <div class="container">
     <h1>Статьи</h1>
-    
-    {% for d in data %}
-    <div class="alert alert-info">
-        <h2>{{ d.title }}</h2>
-        <p>{{ d.intro }}</p>
-        <p><strong>Дата: {{ d.date.date() }}</strong></p>
-        <a href="/articles/{{ d.identifier }}" class="btn btn-warning">Читать</a>
-    </div>
-    {% endfor %}
+
+    {% if data|length > 0 %}
+        {% for d in data %} 
+        <div class="alert alert-info">
+            <h2>{{ d.title }}</h2>
+            <p>{{ d.intro }}</p>
+            <p><strong>Дата: {{ d.date.date() }}</strong></p>
+            <a href="/articles/{{ d.identifier }}" class="btn btn-warning">Читать</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <h2>Статей пока что нет...</h2>
+    {% endif %}
 </div>
 
 {% endblock %}

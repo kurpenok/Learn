@@ -12,6 +12,9 @@
     <div class="alert alert-info">
         <h2>{{ data.intro }}</h2>
         <p>{{ data.text }}</p>
+
+        <a href="/articles/{{ data.identifier }}/delete" class="btn btn-danger">Удалить</a>
+        <a href="/articles/{{ data.identifier }}/edit" class="btn btn-success">Редактировать</a>
     </div>
 </div>
 

@@ -60,6 +60,36 @@ def create():
         return render_template("create.html")
 
 
+@app.route("/articles/<int:identifier>/edit", methods=["POST", "GET"])
+def edit(identifier: int):
+    data = Article.query.get(identifier)
+    if request.method == "POST":
+        data.title = request.form["title"]
+        data.intro = request.form["intro"]
+        data.text = request.form["text"]
+
+        try:
+            db.session.commit()
+            return redirect("/articles")
+        except:
+            return "[-] ERROR! Article was not added!"
+    else:
+        return render_template("edit.html", data=data)
+
+
+@app.route("/articles/<int:identifier>/delete")
+def delete(identifier: int):
+    data = Article.query.get_or_404(identifier)
+
+    try:
+        db.session.delete(data)
+        db.session.commit()
+        return redirect("/articles")
+    except:
+        return "[-] ERROR! An error occured while deleting!"
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 

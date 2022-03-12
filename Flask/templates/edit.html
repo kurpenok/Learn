@@ -1,0 +1,20 @@
+{% extends 'template.html' %}
+
+{% block title %}
+Редактирование статьи
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Редактирование статьи</h1>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-conrol" value="{{ data.title }}"><br>
+        <textarea name="intro" id="intro" class="form-conrol">{{ data.intro }}</textarea><br>
+        <textarea name="text" id="text" class="form-conrol">{{ data.text }}</textarea><br>
+        <input type="submit" class="btn btn-success" value="Обновить">
+    </form>
+
+</div>
+
+{% endblock %}
