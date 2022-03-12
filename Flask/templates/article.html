@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+
+{% block title %}
+{{ data.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>{{ data.title }}</h1>
+
+    <div class="alert alert-info">
+        <h2>{{ data.intro }}</h2>
+        <p>{{ data.text }}</p>
+    </div>
+</div>
+
+{% endblock %}
+

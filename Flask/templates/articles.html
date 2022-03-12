@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+
+{% block title %}
+Статьи
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Статьи</h1>
+    
+    {% for d in data %}
+    <div class="alert alert-info">
+        <h2>{{ d.title }}</h2>
+        <p>{{ d.intro }}</p>
+        <p><strong>Дата: {{ d.date.date() }}</strong></p>
+        <a href="/articles/{{ d.identifier }}" class="btn btn-warning">Читать</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+

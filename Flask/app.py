@@ -28,6 +28,19 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/articles")
+def articles():
+    data = Article.query.order_by(Article.date.desc()).all()
+
+    return render_template("articles.html", data=data)
+
+
+@app.route("/articles/<int:identifier>")
+def article(identifier: int):
+    data = Article.query.get(identifier)
+    return render_template("article.html", data=data)
+
+
 @app.route("/create", methods=["POST", "GET"])
 def create():
     if request.method == "POST":
@@ -40,7 +53,7 @@ def create():
         try:
             db.session.add(article)
             db.session.commit()
-            return redirect("/")
+            return redirect("/articles")
         except:
             return "[-] ERROR! Article was not added!"
     else:
