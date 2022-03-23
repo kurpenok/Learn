@@ -22,12 +22,12 @@ cv2.waitKey(0)
 
 #Video
 
-capture = cv2.VideoCapture('video/video.mp4')
+# capture = cv2.VideoCapture('video/video.mp4')
 
 # Connect web camera and set width and height
-# capture = cv2.VideoCapture(0)
-# capture.set(3, 400)
-# capture.set(4, 300)
+capture = cv2.VideoCapture(0)
+capture.set(3, 400)
+capture.set(4, 300)
 
 while True:
     success, frame = capture.read()
