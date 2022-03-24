@@ -70,6 +70,13 @@ print()
 
 print(np.ones(3, 3))
 print(np.eye(3))
-print(np.diag(np.array((1, 2, 3, 4]))))
+print(np.diag(np.array([1, 2, 3, 4])))
 print()
+
+is_prime = np.ones(100, dtype=bool)
+is_prime[:2] = False
+n_max = int(np.sqrt(len(is_prime)))
+for i in range(2, n_max):
+    is_prime[2*i::i] = False
+print(is_prime)
 
