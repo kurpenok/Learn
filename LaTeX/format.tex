@@ -1,0 +1,45 @@
+\input{preamble.tex}
+
+\begin{document}
+    
+    Структуризация документа:
+    \section{Раздел}
+    \subsection{Подраздел}
+    \dots % Двух уровней вложенности хватает
+    \subsection*{Подраздел без номера}
+    \dots % Такие команды можно использовать как подзаголовки
+    \subsection{Подраздел с номером}
+    \dots % Нумерация не нарушается
+
+    Стиль текста:
+    \textbf{Жирный}, \textit{курсивный}, обычный.
+    {\bfseries \itshape Здесь выделено}, а здесь нет.
+    
+    Размер текста:
+    {\Large Большой текст}, текст поменьше, {\small вообще маленький текст, жестб...}.
+
+     Выравнивание:
+     \begin{center}
+         Центрированный текст.
+     \end{center}
+
+    \begin{flushright}
+        Текст, выровненный по правому краю.
+    \end{flushright}
+    
+    % Пакет окружения для теорем
+    \usepackage{amsthm}
+    \theoremstyle{plain}
+    \newtheorem{theorem}{Теорема}
+    \newtheorem{lemma}{Лемма}
+
+    \begin{lemma}
+        1 + 1 = 3
+    \end{lemma}
+
+    \begin{theorem}
+        2 + 2 = 5
+    \end{theorem}
+
+\end{document}
+
